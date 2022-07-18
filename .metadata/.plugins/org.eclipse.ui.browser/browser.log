@@ -34,3 +34,17 @@
 7월 18, 2022 11:58:31.463 [6312:10352:0718/115831.462:ERROR:device_event_log_impl.cc(214)] [11:58:31.462] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 7월 18, 2022 12:02:17.44 [5028:1168:0718/120217.044:ERROR:device_event_log_impl.cc(214)] [12:02:17.045] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 7월 18, 2022 12:04:05.774 [3652:9512:0718/120405.774:ERROR:device_event_log_impl.cc(214)] [12:04:05.774] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+7월 18, 2022 14:29:21.05 NEW SESSION
+7월 18, 2022 14:29:21.05 [6320:4616:0718/142921.004:ERROR:device_event_log_impl.cc(214)] [14:29:21.004] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+7월 18, 2022 14:35:14.472 NEW SESSION
+7월 18, 2022 14:35:14.472 [12656:6588:0718/143514.471:ERROR:device_event_log_impl.cc(214)] [14:35:14.471] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+7월 18, 2022 14:37:44.380 NEW SESSION
+7월 18, 2022 14:37:44.380 [8868:7032:0718/143744.379:ERROR:device_event_log_impl.cc(214)] [14:37:44.379] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 18, 2022 15:09:13.276 [9076:13956:0718/150913.276:ERROR:device_event_log_impl.cc(214)] [15:09:13.275] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 18, 2022 15:09:43.752 [1408:1652:0718/150943.752:ERROR:device_event_log_impl.cc(214)] [15:09:43.751] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 18, 2022 15:10:30.341 [11456:308:0718/151030.341:ERROR:device_event_log_impl.cc(214)] [15:10:30.341] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 18, 2022 15:39:47.189 [3016:9220:0718/153947.188:ERROR:device_event_log_impl.cc(214)] [15:39:47.188] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 18, 2022 15:46:08.307 [12412:11364:0718/154608.307:ERROR:device_event_log_impl.cc(214)] [15:46:08.307] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.

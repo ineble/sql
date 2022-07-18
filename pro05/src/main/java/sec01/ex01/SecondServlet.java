@@ -15,12 +15,10 @@ public class SecondServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("doGet 메서드 호출>>>>");
-		
 	}
 	@Override
 	public void destroy() {
 		System.out.println("destroy 메소드 호출>>>>");
-		
 	}
 
 	
