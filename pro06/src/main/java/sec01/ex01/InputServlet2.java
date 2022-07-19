@@ -10,9 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/input2")
 public class InputServlet2 extends HttpServlet {
-
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Override
 	public void init() throws ServletException {
 		System.out.println("init 메서드 호출");
@@ -22,6 +28,7 @@ public class InputServlet2 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 	throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
+		
 		Enumeration enu = req.getParameterNames();
 		// 열거타입으로 Names를 받아서 enu에 넣어라
 		// 파라미터의 이름 집합을 Enumerration 객체로 반환하는 메소드

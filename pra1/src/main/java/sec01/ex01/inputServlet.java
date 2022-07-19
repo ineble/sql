@@ -1,7 +1,6 @@
 package sec01.ex01;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/input")
 public class inputServlet extends HttpServlet {
     
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public void init() throws ServletException {
 		System.out.println("init 메서드 호출");
 	}

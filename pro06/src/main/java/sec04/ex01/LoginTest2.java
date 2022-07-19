@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/loginTest")
-public class LoginTest extends HttpServlet {
+@WebServlet("/loginTest2")
+public class LoginTest2 extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -35,6 +35,18 @@ public class LoginTest extends HttpServlet {
 		System.out.println("패스워드 : " +pw);
 		
 		if(id != null &&(id.length()!=0)) {
+			if(id.equals("admin")) {
+				out.print("<html>");
+				out.print("<body>");
+				out.print("<font size='12'>관리자로 로그인 하셨습니다!!");
+				out.print("<br>");
+				out.print("<input type=button value='회원정보 수정하기' />");
+				out.println("<input type=button value='회원정보 삭제하기' />");
+				out.print("<br>");
+				out.print("<font size='3'><a href='http://localhost:8080/pro06/loginTest.html'>로그인창 으로 이동 </a>");
+				out.print("</body>");
+				out.print("</html>");
+			}else {
 			out.print("<html>");
 			out.print("<body>");
 			out.print(id +" 님!! 로그인 하셨습니다.");
@@ -42,7 +54,7 @@ public class LoginTest extends HttpServlet {
 			out.print("<font size='3'><a href='http://localhost:8080/pro06/loginTest.html'>로그인창 으로 이동 </a>");
 			out.print("</body>");
 			out.print("</html>");
-			
+			}
 		}else {
 			out.print("<html>");
 			out.print("<body>");
