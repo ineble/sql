@@ -6,8 +6,13 @@
     <fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
     <fullyQualifiedTypeName name="java.util.Enumeration"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xpath.internal.objects.XStringForFSB"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="sec02.ex01.CalcServlet"/>
+    <fullyQualifiedTypeName name="java.lang.Float"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.Const"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xs.opti.DefaultXMLDocumentHandler"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>

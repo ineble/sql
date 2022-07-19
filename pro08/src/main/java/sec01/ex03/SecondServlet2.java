@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/first1")
-public class FirstServlet1 extends HttpServlet {
-	
+@WebServlet("/second2")
+public class SecondServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 	public void init() throws ServletException {
 		System.out.println("init 메소드 호출");
 	}
@@ -22,7 +22,9 @@ public class FirstServlet1 extends HttpServlet {
 	throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		response.addHeader("Refresh","5;url=second1");
+		out.println("<html><body>");
+		out.println("location을 이용한 redirect 실습입니다.");
+		out.println("</body></html>");
 	}
 	public void destroy() {
 		System.out.println("destroy 메소드 호출");
