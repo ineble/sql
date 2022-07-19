@@ -89,3 +89,7 @@
 7월 19, 2022 14:49:43.743 [10132:12796:0719/144943.743:ERROR:gpu_process_host.cc(975)] GPU process exited unexpectedly: exit_code=1
 7월 19, 2022 14:49:45.973 [10132:12796:0719/144945.972:ERROR:gpu_process_host.cc(975)] GPU process exited unexpectedly: exit_code=1
 7월 19, 2022 14:49:54.325 [516:7928:0719/144954.324:ERROR:device_event_log_impl.cc(214)] [14:49:54.325] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 19, 2022 16:44:27.885 [11436:4424:0719/164427.885:ERROR:gpu_process_host.cc(975)] GPU process exited unexpectedly: exit_code=1
+7월 19, 2022 16:44:42.551 [6912:8992:0719/164442.551:ERROR:device_event_log_impl.cc(214)] [16:44:42.551] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 19, 2022 16:45:46.48 [12432:7568:0719/164546.048:ERROR:device_event_log_impl.cc(214)] [16:45:46.048] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 19, 2022 16:46:25.663 [11920:3252:0719/164625.663:ERROR:device_event_log_impl.cc(214)] [16:46:25.663] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
