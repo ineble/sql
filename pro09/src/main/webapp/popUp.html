@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트에서 쿠기 사용</title>
+<script type="text/javascript">
+	function setPopUpStart(obj){
+		// setPopUpStart 함수 
+		if(obj.checked==true){
+			// 매개변수 this를 받으니깐 만약 checked가 되어있다면
+			var expireDate = new Date();
+			// 기간을 새 객체로 만든다.
+			expireDate.setMonth(expireDate.getMonth()+1);
+			// 그리고 그 변수에 1달이라는 기간을 세팅해준다.
+			document.cookie = "notShowPop=" + "true" + ";path=/; expires=" + expireDate.toGMTString();
+			// gmtString ->  인너텟 그리니치 표준시를 따르는 날짜를 스트링으로 표현하는 함수
+			// 문서 쿠키는 notShowPop= true; ~~~ 쿠키 생성 기간
+			window.close();
+			//팝업을 닫아라
+		}
+	}	
+</script>
+</head>
+<body>
+	알림 팜업창입니다.
+	<br><br><br><br><br><br><br>
+	<form>
+		<input type="checkbox" onClick="setPopUpStart(this)">오늘 더 이상 팝업창 뛰우지 않기	
+	</form>
+</body>
+</html>
