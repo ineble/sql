@@ -12,6 +12,7 @@
 </head>
 <body>
 	<table border="1" width='800'>
+	
 	<tr align="center" bgcolor="#FFFF66">
 	<td colspan="2"><%= dan %>단 출력 </td>
 	</tr>
