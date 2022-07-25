@@ -7,7 +7,7 @@
 <title>회원등록창</title>
 </head>
 <body>
-	<form action="member1.jsp" method="post">
+	<form action="member8.jsp" method="post">
 	<h1 style="text-align: center">회원 가입창</h1>
 	<table style="align: center">
 		<tr>
