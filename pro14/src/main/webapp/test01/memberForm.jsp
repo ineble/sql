@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="member3.jsp" method="post">
+	<form action="member6.jsp" method="post">
 	<h1 align="center">회원 가입창</h1>
 	<table align="center">
 		<tr>

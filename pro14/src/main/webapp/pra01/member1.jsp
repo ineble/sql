@@ -12,6 +12,11 @@
 <jsp:setProperty name="m1" property="*" />
 <jsp:useBean id="memberList" class="java.util.ArrayList" />
 <% memberList.add(m1); %>
+<style>
+	a{
+	margin-left: 45%;
+	}
+</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +24,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1 align="center">회원 목록</h1>
 	<table border=1 align="center" >
 	<tr align="center" bgcolor="#99ccff">
 	<td width="20%"><b>아이디</b></td>
@@ -33,6 +39,7 @@
 	<td width="20%">${memberList[0].email}</td>
 	</tr>
 	</table>
+	<a href="login.jsp" >로그인 목록 가기</a>
 	
 </body>
 </html>

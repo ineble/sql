@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>로그인 창</h1>
-	<form >
+	<form action="result.jsp" method="get">
 	아이디 : <input  type="text" name="userID" /><br>
 	비밀번호 : <input type="password" name="userPW" /><br>
 	<input type="submit" value="로그인" /> &nbsp; <input type="reset" value="실행취소">

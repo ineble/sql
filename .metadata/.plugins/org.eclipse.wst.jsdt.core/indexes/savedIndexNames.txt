@@ -1,12 +1,10 @@
 INDEX VERSION 1.4+C:\songjiseop\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 2549911910.index
 554609932.index
-244134491.index
 3211475928.index
 1479446740.index
 2703085184.index
 2514948437.index
-2728552500.index
 3362523982.index
 1185276807.index
 886708138.index
@@ -19,6 +17,5 @@ INDEX VERSION 1.4+C:\songjiseop\.metadata\.plugins\org.eclipse.wst.jsdt.core\ind
 1614135437.index
 2428138557.index
 356618592.index
-1286342936.index
 2428138557.index
 716411817.index
