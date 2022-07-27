@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 
 
+
 public class MemberDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
@@ -45,10 +46,10 @@ public class MemberDAO {
 			pstmt.setString(4, email);
 			pstmt.executeUpdate();
 			pstmt.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	
 		
 	}
 	public List  listMembers() {

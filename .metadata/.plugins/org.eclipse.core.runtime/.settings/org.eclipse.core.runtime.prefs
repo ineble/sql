@@ -1,2 +1,4 @@
 content-types/org.eclipse.core.runtime.text/charset=utf-8
+content-types/org.eclipse.jdt.core.javaClass/charset=utf-8
+content-types/org.eclipse.ui.content-type.images/charset=utf-8
 eclipse.preferences.version=1
