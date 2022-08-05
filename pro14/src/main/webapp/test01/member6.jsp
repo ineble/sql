@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false"
-    import="sec01.ex02.*,java.util.*"
+    import="sec02.ex01.*,java.util.*"
     %>
-<% request.setCharacterEncoding("utf-8"); %>
-<jsp:useBean id="m" class="sec01.ex02.MemberBean"/>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="m" class="sec02.ex01.MemberBean"/>
 <jsp:setProperty property="*" name="m" />
-<jsp:useBean id="addr" class="sec01.ex02.Address"/>
+<jsp:useBean id="addr" class="sec02.ex01.Address"/>
 <jsp:setProperty property="city" name="addr" value="서울"/>
 <jsp:setProperty property="zipcode" name="addr" value="07654"/>
 
