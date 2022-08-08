@@ -32,7 +32,7 @@ public class MemberDAO {
 		List memberList = new ArrayList();
 		try {
 			con = dataFactroy.getConnection();
-			String query = "select * from t_member order by joinDate desc";
+			String query = "SELECT * from t_member ORDER BY joinDate desc";
 			System.out.println(query);
 			pstmt = con.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery();
@@ -143,23 +143,3 @@ public class MemberDAO {
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

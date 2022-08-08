@@ -29,7 +29,7 @@
 	<caption>회원가입창</caption>
 	<tr>
     	<td width="110"><p>아이디 : </p></td>
-    	<td width="50"><input type="text" name="id" value="${memInfo.id}" disabled"></td>
+    	<td width="50"><input type="text" name="id" value="${memInfo.id}" disabled="disabled"></td>
     </tr>
   	<tr>
     	<td width="110"><p>이름 : </p></td>

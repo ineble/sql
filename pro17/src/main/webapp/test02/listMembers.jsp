@@ -18,7 +18,6 @@ request.setCharacterEncoding("UTF-8");
 	font-size: 40px;
 	text-align: center;
 }
-
 .cls2 {
 	text-align: center;
 }
