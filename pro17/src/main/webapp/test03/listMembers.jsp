@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
+    import="java.util.*,sec02.ex02.*"
     isELIgnored="false"
 %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -65,7 +66,7 @@
 			</td>
 		</tr>
 	</c:when>
-	<c:when test="${membersList != null}">
+	<c:when test="${!empty membersList}">
 		<c:forEach var="mem" items="${membersList }">
 		<tr align="center" >
 			<td width="7%">${mem.id }</td>
@@ -74,7 +75,7 @@
 			<td width="7%">${mem.email }</td>
 			<td width="7%">${mem.joinDate }</td>
 			<td width="7%"><a href="${contextPath}/member/modMemberForm.do?id=${mem.id}">수정</a></td>
-			<td width="7%"><a href="${contextPath}/member/delMemberForm.do?id=${mem.id}">삭제</a></td>
+			<td width="7%"><a href="${contextPath}/member/delMember.do?id=${mem.id}">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</c:when>

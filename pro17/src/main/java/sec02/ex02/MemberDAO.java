@@ -91,6 +91,7 @@ public class MemberDAO {
 			String email = rs.getString("email");
 			Date joinDate = rs.getDate("joinDate");
 			memInfo = new MemberVo(id, pwd, name, email, joinDate);
+			rs.close();
 			pstmt.close();
 			con.close();
 		} catch (Exception e) {

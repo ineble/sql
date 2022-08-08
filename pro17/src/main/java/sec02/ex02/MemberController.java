@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("*.do") //1cha mapping
+@WebServlet("/member/*") //1차 mapping
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -40,7 +40,7 @@ public class MemberController extends HttpServlet {
 		if(action == null || action.equals("/listMembers.do")) {
 		List<MemberVo> memberList = memberDAO.listMember();
 		request.setAttribute("membersList", memberList);
-		nextPage = "/test03/listMembers.jsp";
+		
 		}else if(action.equals("/addMember.do")) {
 			String id = request.getParameter("id");
 			String pwd = request.getParameter("pwd");
@@ -48,7 +48,8 @@ public class MemberController extends HttpServlet {
 			String email = request.getParameter("email");
 			MemberVo memberVo = new MemberVo(id, pwd, name, email);
 			memberDAO.addMember(memberVo);
-			nextPage = "/test03/listMembers.do";
+			nextPage = "/member/listMembers.jsp";
+
 		}else if(action.equals("/memberForm.do")) {
 			nextPage = "/test03/memberForm.jsp";
 		}else if(action.equals("/modMemberForm.do")) {
@@ -63,12 +64,12 @@ public class MemberController extends HttpServlet {
 			String email = request.getParameter("email");
 			MemberVo memberVo = new MemberVo(id, pwd, name, email);
 			memberDAO.modMember(memberVo);
-			nextPage = "/test03/listMembers.do";
+			nextPage = "/member/listMembers.do";
 		}else if(action.equals("/delMember.do")) {
 			String id = request.getParameter("id");
 			memberDAO.delMember(id);
 			request.setAttribute("msg", "deleted");
-			nextPage = "/test03/listMembers.do";
+			nextPage = "/member/listMembers.do";
 		}else {
 			List<MemberVo> memberList = memberDAO.listMember();
 			request.setAttribute("memberList", memberList);

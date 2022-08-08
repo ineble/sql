@@ -23,7 +23,6 @@
 </style>
 </head>
 <body>
-
 	<form action="${contextPath }/member/addMember.do" method="post">
 	<table align="center">
 	<caption>회원가입창</caption>
