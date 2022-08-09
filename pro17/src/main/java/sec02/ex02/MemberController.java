@@ -48,6 +48,7 @@ public class MemberController extends HttpServlet {
 			String email = request.getParameter("email");
 			MemberVo memberVo = new MemberVo(id, pwd, name, email);
 			memberDAO.addMember(memberVo);
+			request.setAttribute("msg", "addMember");
 			nextPage = "/member/listMembers.do";
 
 		}else if(action.equals("/memberForm.do")) {
@@ -64,6 +65,7 @@ public class MemberController extends HttpServlet {
 			String email = request.getParameter("email");
 			MemberVo memberVo = new MemberVo(id, pwd, name, email);
 			memberDAO.modMember(memberVo);
+			request.setAttribute("msg", "modified");
 			nextPage = "/member/listMembers.do";
 		}else if(action.equals("/delMember.do")) {
 			String id = request.getParameter("id");

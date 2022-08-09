@@ -3,6 +3,7 @@ package sec02.ex01;
 import java.sql.Date;
 
 public class MemberVo {
+	
 	String id;
 	String pwd;
 	String name;
