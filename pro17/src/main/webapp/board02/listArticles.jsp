@@ -28,12 +28,13 @@
 			<td width="5%">글번호</td>
 			<td width="10%">작성자</td>
 			<td width="35%">제목</td>
+			<td width="10%">파일이름</td>
 			<td width="10%">작성일</td>
 		</tr>
 		<c:choose>
          <c:when test="${articlesList==null }">
             <tr height="10">
-               <td colspan="4">
+               <td colspan="5">
                   <p align="center">
                      <b><span style="font-size: 9pt;">등록된 글이 없습니다.</span></b>
                   </p>
@@ -46,8 +47,7 @@
                <tr align="center">
                   <td width="5%">${articleNum.count }</td>
                   <td width="10%">${article.id }</td>
-                  <td align='left' width="35%"><span
-                     style="padding-right: 30px"></span> 
+                  <td align='left' width="35%"><span style="padding-right: 30px"></span> 
                       <c:choose>
                         <c:when test='${article.level > 1}'>
                            <c:forEach begin="1" end="${article.level }" step="1">
@@ -59,7 +59,8 @@
                         <c:otherwise>
                            <a href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO }">${article.title }</a>
                         </c:otherwise>
-                     </c:choose></td> 
+                     </c:choose></td>
+                  <td width="10%">${article.imageFileName}</td> 
                   <td width="10%"><fmt:formatDate value="${article.writeDate }" />
                   </td>
                </tr>

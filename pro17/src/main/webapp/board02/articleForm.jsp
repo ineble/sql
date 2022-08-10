@@ -16,9 +16,9 @@
 		if(input.files && input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function (e) {
-				$('#preview').attr('src',e.target.result);
+				$('#preview').attr('src', e.target.result);
 			}
-			reader.readAsDateURL(input.files[0]);
+			reader.readAsDataURL(input.files[0]);
 		}
 	}
 	function backToList(obj) {
@@ -43,8 +43,8 @@
 		</tr>
 		<tr>
 			<td align="right" >이미지파일 첨부: </td>
-			<td colspan="2"><input type="file" onchange="readURL(this);" name="imageFileName"></td>
-			<td img id="preview" src="#" width="300" height="300"> </td>
+			<td><input type="file" name="imageFileName" onchange="readURL(this);" /></td>
+			<td> <img id="preview" src="#" width="200" height="200" /> </td>
 		</tr>
 		<tr>
 			<td align="right"></td>

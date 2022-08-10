@@ -15,13 +15,13 @@ import javax.sql.DataSource;
 public class BoardDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
-	private DataSource dataFactroy;
+	private DataSource dataFactory;
 
 	public BoardDAO() {
 		try {
 			Context ctx = new InitialContext();
 			Context envContext = (Context) ctx.lookup("java:/comp/env");
-			dataFactroy = (DataSource)envContext.lookup("jdbc/servletex");
+			dataFactory = (DataSource)envContext.lookup("jdbc/servletex");
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -35,7 +35,7 @@ public class BoardDAO {
 		
 		List articlesList = new ArrayList();
 		try {
-			con = dataFactroy.getConnection();
+			con = dataFactory.getConnection();
 			String query = "SELECT function_hierarchical() AS articleNO, @LEVEL AS level,title,parentNO ,content,id,writeDate"
 					+ " FROM (SELECT @start_with:=0, @articleNO:=@start_with, @LEVEL:=0) tbl"
 					+ " JOIN t_board";
@@ -73,7 +73,7 @@ public class BoardDAO {
 
 	private int getNewArticleNO() {
 		try {
-			con = dataFactroy.getConnection();
+			con = dataFactory.getConnection();
 			String query = "select max(articleNO) from t_board";
 			System.out.println(query);
 			pstmt = con.prepareStatement(query);
@@ -91,16 +91,16 @@ public class BoardDAO {
 	
 	public void insertNewArticle(ArticleVO article) {
 		try {
-			con = dataFactroy.getConnection();
+			con = dataFactory.getConnection();
 			int articleNO = getNewArticleNO();
 			int parentNO = article.getParentNO();
 			String title = article.getTitle();
 			String content = article.getContent();
 			String id = article.getId();
 			String imageFileName = article.getImageFileName();
+			System.out.println(imageFileName);
 			String query = "INSERT INTO t_board (articleNO, parentNO, title, content, imageFileName, id)"
 			+ " VALUES(?,?,?,?,?,?)";
-			System.out.println(query);
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1,articleNO);
 			pstmt.setInt(2,parentNO);
