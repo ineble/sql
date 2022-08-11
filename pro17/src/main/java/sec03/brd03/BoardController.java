@@ -98,6 +98,7 @@ public class BoardController extends HttpServlet {
             return;
          } else if(action.equals("/viewArticle.do")) {
             String articleNO=request.getParameter("articleNO");
+            System.out.println();
             articleVO=boardService.viewArticle(Integer.parseInt(articleNO));
             request.setAttribute("article", articleVO);
             nextPage="/board06/viewArticle.jsp";
@@ -109,7 +110,7 @@ public class BoardController extends HttpServlet {
             String content=articleMap.get("content");
             String imageFileName=articleMap.get("imageFileName");
             articleVO.setParentNO(0);
-            articleVO.setId("kang");
+            articleVO.setId("hong");
             articleVO.setTitle(title);
             articleVO.setContent(content);
             articleVO.setImageFileName(imageFileName);
@@ -129,16 +130,16 @@ public class BoardController extends HttpServlet {
             return;
          } else if(action.equals("/removeArticle.do")) {
             int articleNO=Integer.parseInt(request.getParameter("articleNO"));
-            List<Integer> articleNOList=boardService.removeArticle(articleNO);
+            int parentNO = Integer.parseInt(request.getParameter("panrentNO"));
+            List<Integer> articleNOList=boardService.removeArticle(articleNO, parentNO);
             for(int _articleNO : articleNOList) {
                File imgDir=new File(ARTICLE_IMAGE_REPO+"\\"+_articleNO);
                if(imgDir.exists()) {
                   FileUtils.deleteDirectory(imgDir);
                }
             }
-            
             PrintWriter pw=response.getWriter();
-            pw.print("<script>"+" alert('글을 삭제했습니다.');" +" location.href='"+request.getContextPath()+"/board/listArticles.do'"+"</script>");
+            pw.print("<script>"+" alert('글을 삭제했습니다.');" +" location.href='"+request.getContextPath()+"/board/listArticles.do';"+"</script>");
             return;
          } else if(action.equals("/replyForm.do")) {
             int parentNO=Integer.parseInt(request.getParameter("parentNO"));
@@ -153,20 +154,20 @@ public class BoardController extends HttpServlet {
             String title=articleMap.get("title");
             String content=articleMap.get("content");
             String imageFileName=articleMap.get("imageFileName");
-            articleVO.setParentNO(parentNO);
+            articleVO.setParentNO(parentNO); //parentNO 고침
             articleVO.setId("kim");
             articleVO.setTitle(title);
             articleVO.setContent(content);
             articleVO.setImageFileName(imageFileName);
             int articleNO=boardService.addReply(articleVO);
-            if(imageFileName!=null&imageFileName.length()!=0) {
+            if(imageFileName!=null && imageFileName.length()!=0) {
                File srcFile=new File(ARTICLE_IMAGE_REPO +"\\" +"temp" +"\\"+imageFileName);
                File destDir=new File(ARTICLE_IMAGE_REPO+"\\"+articleNO);
                destDir.mkdirs();
                FileUtils.moveFileToDirectory(srcFile, destDir, true);
             }
             PrintWriter pw=response.getWriter();
-            pw.print("<script>"+" alert('답글을 추가했습니다.');" +" location.href='"+request.getContextPath()+"/board/viewArticle.do?articleNO='"+";"+"</script>");
+            pw.print("<script>"+" alert('답글을 추가했습니다.');" +" location.href='"+request.getContextPath()+"/board/viewArticle.do?articleNO="+articleNO+"';"+"</script>");
             return;
          } else {
             nextPage="board06/listArticles.jsp";
@@ -209,6 +210,7 @@ public class BoardController extends HttpServlet {
                   String fileName = fileItem.getName().substring(idx + 1);
                   System.out.println("파일명:" + fileName);
                   articleMap.put(fileItem.getFieldName(), fileName);
+                  
                   File uploadFile = new File(currentDirPath + "\\temp\\" + fileName);
                   fileItem.write(uploadFile);
                } // end if

@@ -54,13 +54,11 @@ request.setCharacterEncoding("UTF-8");
 									</c:forEach>
 									<span style="font-size: 12px;">[답변]</span>
 									<a class='cls1'
-										href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title
-}</a>
+										href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a>
 								</c:when>
 								<c:otherwise>
 									<a class='cls1'
-										href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title 
-}</a>
+										href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title }</a>
 								</c:otherwise>
 							</c:choose></td>
 						<td width="10%"><fmt:formatDate value="${article.writeDate}" /></td>

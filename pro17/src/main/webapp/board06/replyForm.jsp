@@ -19,9 +19,10 @@
 		if (input.files && input.files[0]) {
 			var reader = new FileReader();
 			reader.onload = function (e) {
-				$('#preview').attr('src', e.target.result);
+				$('#preview').attr('src', e.target.result); //속성부여 현재의 결과값에 src속성을 부여
 			}
-			reader.readAsDataURL(input.files[0]);
+			reader.readAsDataURL(input.files[0]); //reader를 이용하여 input.files[0]의 첫번째 uri을 읽어들이는
+			// 파일이나 매개변수를 읽는 메소드
 		}
 	}
 
@@ -29,7 +30,7 @@
 <title>답글쓰기 페이지</title>
 </head>
 <body>
-	<h1 style="text-align: center;">답글쓰기</h1>
+	<h1 style="text-align: center">답글쓰기</h1>
 	<form action="${contextPath}/board/addReply.do" name="frmReply" method="post" enctype="multipart/form-data">
 		<table align="center">
 			<tr>

@@ -330,3 +330,19 @@
 8월 10, 2022 20:35:42.853 [7316:11296:0810/203542.852:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
 8월 10, 2022 20:36:14.215 [7316:11296:0810/203614.214:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
 8월 10, 2022 20:38:02.682 [7316:11296:0810/203802.681:ERROR:interface_endpoint_client.cc(665)] Message 5 rejected by interface blink.mojom.WidgetHost
+
+8월 11, 2022 09:30:18.318 NEW SESSION
+8월 11, 2022 09:30:18.318 [6972:7552:0811/093018.316:ERROR:device_event_log_impl.cc(214)] [09:30:18.317] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+8월 11, 2022 10:05:05.586 NEW SESSION
+8월 11, 2022 10:05:05.586 [9952:8500:0811/100505.585:ERROR:device_event_log_impl.cc(214)] [10:05:05.585] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+8월 11, 2022 10:10:55.251 [7184:5060:0811/101055.251:ERROR:device_event_log_impl.cc(214)] [10:10:55.252] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+8월 11, 2022 10:11:12.173 [3692:4092:0811/101112.173:ERROR:device_event_log_impl.cc(214)] [10:11:12.174] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+8월 11, 2022 10:11:35.582 [1988:6288:0811/101135.582:ERROR:device_event_log_impl.cc(214)] [10:11:35.582] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+8월 11, 2022 10:21:21.792 NEW SESSION
+8월 11, 2022 10:21:21.792 [11364:6136:0811/102121.791:ERROR:device_event_log_impl.cc(214)] [10:21:21.792] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+8월 11, 2022 10:32:42.503 [824:10392:0811/103242.503:ERROR:device_event_log_impl.cc(214)] [10:32:42.504] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+8월 11, 2022 10:42:29.125 [824:10392:0811/104229.125:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
+8월 11, 2022 14:33:40.07 [824:10392:0811/143340.007:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
+8월 11, 2022 14:56:43.143 [824:10392:0811/145643.143:ERROR:interface_endpoint_client.cc(665)] Message 0 rejected by interface blink.mojom.WidgetHost
