@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+ 
+<beans>
+
+	<bean id="calcTarget" class="com.spring.ex01.Calculator" />
+	<!-- 타깃 클래스 빈 설정 --> 
+	<bean id="logAdvice" class="com.spring.ex01.LoggingAdvice" />
+	<!--  로그 기능을 하는 어드바이스 빈을 지정  로기 기능이란 : 기록의 저장을 의미 -> 문제의 원인을 파악하려면 문제가 바생했을 때 정보가 필요-->
+	<bean id="proxyCal" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="calcTarget"/>
+			<property name="interceptorNames">
+			<list>
+				<value>logAdvice</value>
+			</list>
+			</property>
+	</bean>
+</beans>
