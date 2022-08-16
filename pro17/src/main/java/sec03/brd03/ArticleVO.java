@@ -4,6 +4,8 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.sql.Date;
 
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+
 public class ArticleVO {
 	private int level;
 	private int articleNO;
@@ -20,9 +22,17 @@ public class ArticleVO {
 	}
 
 	
-	public ArticleVO(int level, int articleNO, int parentNO, String title, String imageFileName, String content,
-			String id) {
-		super();
+	public ArticleVO(int level, int articleNO, int parentNO, String title) {
+		this.level = level;
+		this.articleNO = articleNO;
+		this.parentNO = parentNO;
+		this.title = title;
+	}
+	
+
+
+	public ArticleVO(int level, int articleNO, int parentNO, String title, String imageFileName, String content, String id) {
+		
 		this.level = level;
 		this.articleNO = articleNO;
 		this.parentNO = parentNO;

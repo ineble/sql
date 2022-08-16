@@ -79,7 +79,7 @@ public class BoardController extends HttpServlet {
             Map<String, String> articleMap=upload(request, response);
             String title=articleMap.get("title");
             String content=articleMap.get("content");
-            String imageFileName=articleMap.get("imageFileName");
+            String imageFileName = articleMap.get("imageFileName");
             
             articleVO.setParentNO(0);
             articleVO.setId("kang");
@@ -130,8 +130,7 @@ public class BoardController extends HttpServlet {
             return;
          } else if(action.equals("/removeArticle.do")) {
             int articleNO=Integer.parseInt(request.getParameter("articleNO"));
-            int parentNO = Integer.parseInt(request.getParameter("panrentNO"));
-            List<Integer> articleNOList=boardService.removeArticle(articleNO, parentNO);
+            List<Integer> articleNOList=boardService.removeArticle(articleNO);
             for(int _articleNO : articleNOList) {
                File imgDir=new File(ARTICLE_IMAGE_REPO+"\\"+_articleNO);
                if(imgDir.exists()) {
@@ -181,7 +180,7 @@ public class BoardController extends HttpServlet {
       }
 
    private Map<String, String> upload(HttpServletRequest request, HttpServletResponse respone)
-         throws ServletException, IOException {
+      throws ServletException, IOException {
       Map<String, String> articleMap = new HashMap<String, String>();
       String encoding = "utf-8";
       File currentDirPath = new File(ARTICLE_IMAGE_REPO);
@@ -200,7 +199,7 @@ public class BoardController extends HttpServlet {
                System.out.println("파라미터명:" + fileItem.getFieldName());
                System.out.println("파일이름 : " + fileItem.getName());
                System.out.println("파일크기:" + fileItem.getSize() + "bytes");
-               articleMap.put(fileItem.getFieldName(), fileItem.getName());
+               //articleMap.put(fileItem.getFieldName(), fileItem.getName());
                if (fileItem.getSize() > 0) {
                   int idx = fileItem.getName().lastIndexOf("\\");
                   if (idx == -1) {

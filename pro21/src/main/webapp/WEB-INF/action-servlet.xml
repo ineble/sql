@@ -10,12 +10,46 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-<bean id="simpleUrlController" class="com.spring.ex01.SimpleUrlController" />
+	<bean id="simpleUrlController"
+		class="com.spring.ex01.SimpleUrlController" />
 	<bean id="urlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/test/index.do">simpleUrlController</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- setViewName 메서드를 사용할떄 내부리소스뷰리졸버를 호출한다 -->
+		<!-- 얘는 전체 경로를 만들어 dispatch를 해준다 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/test/" />
+		<!-- prefix : 접두사 suffix : 접미사 -->
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="userUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/test/*.do">userController</prop>
+				<!-- 클래스를 호출하는 메소드 -->
+			</props>
+		</property>
+	</bean>
+	<bean id="userController" class="com.spring.ex02.UserController">
+		<property name="methodNameResolver">
+			<ref local="userMethodNameResolver" />
+			<!-- local은 같은 xml 파일이라는 것이 중요 -->
+		</property>
+	</bean>
+	<bean id="userMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+		<!-- property는 환경설정 -->
+			<props>
+				<prop key="/test/result.do">login</prop>
+				<prop key="/test/memberInfo.do">memberInfo</prop>
+				<!-- login은 유저컨트롤러 안의 login이라는 메서드를 호출한다 -->
 			</props>
 		</property>
 	</bean>
