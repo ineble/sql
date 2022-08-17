@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.spring.ex02.MemberVO;
+
 public class MemberDAO {
 	private static SqlSessionFactory sqlMapper=null;
 	public static SqlSessionFactory getInstance() {

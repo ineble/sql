@@ -1,8 +1,9 @@
-//package com.spring.ex02;
+//package com.spring.ex03;
 //
 //import java.io.IOException;
-//import java.io.PrintWriter;
+//import java.util.List;
 //
+//import javax.servlet.RequestDispatcher;
 //import javax.servlet.ServletConfig;
 //import javax.servlet.ServletException;
 //import javax.servlet.annotation.WebServlet;
@@ -11,7 +12,7 @@
 //import javax.servlet.http.HttpServletResponse;
 //
 //
-//@WebServlet("/mem2.do")
+//@WebServlet("/mem3.do")
 //public class MemberServlet extends HttpServlet {
 //	private static final long serialVersionUID = 1L;
 //       
@@ -37,13 +38,26 @@
 //		request.setCharacterEncoding("utf-8");
 //		response.setContentType("text/html;charset=utf-8");
 //		MemberDAO dao = new MemberDAO();
-//		String name = dao.selectName();
-//		String pwd = dao.selectPwd();
-//		PrintWriter pw = response.getWriter();
-//		pw.write("<script>");
-//		pw.write("alert(' 이름: " + name +"');");
-//		pw.write("alert(' 비밀번호: " + pwd +"');");
-//		pw.write("</script>");
+//		MemberVO memberVO = new MemberVO(); 
+//		String action = request.getParameter("action");
+//		String nextpage = "";
+//		if(action == null || action.equals("listMembers")) {
+//			List memberList = dao.selectAllMemberList();
+//			request.setAttribute("memberList", memberList);
+//			nextpage = "test02/listMembers.jsp";
+//		}else if(action.equals("selectMemberById")) {
+//			String id = request.getParameter("value");
+//			memberVO = dao.selectMemberById(id);
+//			request.setAttribute("member", memberVO);
+//			nextpage = "test02/memberInfo.jsp";
+//		}else if(action.equals("selectMemberByPwd")) {
+//			int pwd = Integer.parseInt(request.getParameter("value"));
+//			List<MemberVO> memberList = dao.selectMemberByPwd(pwd);
+//			request.setAttribute("memberList", memberList);
+//			nextpage = "test02/listMembers.jsp";
+//		}
+//		RequestDispatcher dispatch = request.getRequestDispatcher(nextpage);
+//		dispatch.forward(request, response);
 //		
 //	}
 //
