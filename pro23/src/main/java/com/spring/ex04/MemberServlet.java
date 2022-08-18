@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.spring.ex01.MemberVO;
 
 
+
 @WebServlet("/mem4.do")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -83,6 +84,12 @@ public class MemberServlet extends HttpServlet {
 			memberMap.put("email", email);
 			dao.insertMember2(memberMap);
 			nextpage="/mem4.do?action=listMembers";
+		}else if(action.equals("modMemberForm")) {
+			String id = request.getParameter("id");
+			memberVO = dao.selectMemberById(id);
+			request.setAttribute("member", memberVO);
+			nextpage = "test03/modMember.jsp";
+
 		}else if(action.equals("updateMember")) {
 			String id = request.getParameter("id");
 			String pwd = request.getParameter("pwd");
@@ -108,9 +115,9 @@ public class MemberServlet extends HttpServlet {
 			nextpage="test03/listMembers.jsp";
 		}else if(action.equals("foreachSelect")) {
 			List<String> nameList = new ArrayList<String>();
-			nameList.add("관리자1");
+			nameList.add("송인재");
 			nameList.add("강현");
-			nameList.add("김유신");
+			nameList.add("김승현");
 			List<MemberVO> memberList = dao.foreachSelect(nameList);
 			request.setAttribute("memberList", memberList);
 			nextpage="test03/listMembers.jsp";

@@ -15,7 +15,7 @@
 	<form action="${contextPath}/mem4.do">
 	<input type="hidden" name="action" value="searchMember" />
 	이름 : <input type="text" name="name" /> <br>
-	이메일 : <input type=""text"" name="email" /> <br>
+	이메일 : <input type="email" name="email" /> <br>
 	<input type="submit" value="검색">
 	</form>
 </body>

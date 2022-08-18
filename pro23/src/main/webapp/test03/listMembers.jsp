@@ -52,9 +52,10 @@
 			<td width="7%">${mem.name }</td>
 			<td width="7%">${mem.email }</td>
 			<td width="7%">${mem.joinDate }</td>
-			<td width="7%"><a href="${contextPath}/test03/modMember.jsp">수정하기</a></td>
+			<td width="7%"><a href="${contextPath}/mem4.do?action=modMemberForm&id=${mem.id}">수정하기</a></td>
 			<td width="7%"><a href="${contextPath}/mem4.do?action=deleteMember&id=${mem.id}">삭제하기</a></td>
 		</tr>
+		
 		</c:forEach>
 	</c:when>
 	</c:choose>
