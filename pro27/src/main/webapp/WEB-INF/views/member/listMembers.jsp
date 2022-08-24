@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 정보 출력창</title>
+<title>지섭 - 회원 정보 출력창</title>
 <style type="text/css">
 	.cls1{
 	font-size: 40px;
@@ -25,6 +25,17 @@
 
 </head>
 <body>
+	<h3>회원검색</h3>
+	<form action="${contextPath}/member/searchMember.do">
+	이름 : <input type="text" name="name" /> 
+	이메일 : <input type="email" name="email" />
+	<select>
+    <option>이름</option>
+    <option>이메일</option>
+    <option>이름 &이메일</option>
+	</select>
+	<input type="submit" value="검색">
+	</form>
 	<table align="center" width="100%" border="1">
 		<tr align="center" bgcolor="lightgreen" >
 			<td width="7%">아이디</td>
@@ -32,8 +43,8 @@
 			<td width="7%">이름</td>
 			<td width="7%">이메일</td>
 			<td width="7%">가입일</td>
-			<td width="7%">수정</td>
-			<td width="7%">삭제</td>
+			<td width="10%">수정</td>
+			<td width="10%">삭제</td>
 		</tr>
 	
 	<c:choose>
@@ -52,16 +63,18 @@
 			<td width="7%">${mem.name }</td>
 			<td width="7%">${mem.email }</td>
 			<td width="7%">${mem.joinDate }</td>
-			<td width="7%"><a href="${contextPath}/member/modMember.do?id=${mem.id}">수정하기</a></td>
-			<td width="7%"><a href="${contextPath}/member/removeMember.do?id=${mem.id}">삭제하기</a></td>
+			<td width="10%"><a href="${contextPath}/member/modMember.do?id=${mem.id}">수정하기</a></td>
+			<td width="10%"><a href="${contextPath}/member/removeMember.do?id=${mem.id}">삭제하기</a></td>
 		</tr>
 		</c:forEach>
 	</c:when>
 	</c:choose>
 	</table>
+	
 	<a href="${contextPath}/member/memberForm.do">
 	<h1 style="text-align: center">회원가입</h1>
 	</a>
+	
 
 </body>
 </html>

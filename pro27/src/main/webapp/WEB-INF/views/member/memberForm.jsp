@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 가입창</title>
+<title>지섭 - 회원 가입창</title>
 <style type="text/css">
 	.cls1{
 	font-size: 40px;

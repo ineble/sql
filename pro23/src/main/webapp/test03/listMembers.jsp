@@ -60,6 +60,7 @@
 	</c:when>
 	</c:choose>
 	</table>
+	
 	<a href="${contextPath}/test03/memberForm.jsp">
 	<h1 style="text-align: center">회원가입</h1>
 	</a>

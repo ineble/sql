@@ -14,10 +14,13 @@ public interface MemberDAO {
 
 	int deleteMember(String id) throws DataAccessException;
 
-	MemberVO selectMem(String id) throws DataAccessException;
+	public MemberVO selectMem(String id) throws DataAccessException;
 
 	int updateMember(MemberVO memberVO) throws DataAccessException;
 
+	public MemberVO loginById(MemberVO memberVO) throws DataAccessException;
+
+	//public List<MemberVO> searchMember(MemberVO memberVO) throws DataAccessException;
 
 	
 }

@@ -29,6 +29,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where id = 'hong'
 		]]>
 	</select>
+	
+	<!-- <select id="loginById" resultType="String">
+		<![CDATA[
+			select name from t_member 
+			where id = 'hong'
+		]]>
+	</select> -->
+	
+	
 	<select id="selectPwd" resultType="String">
 		<![CDATA[
 			select pwd from t_member 
@@ -115,6 +124,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select * from t_member
 			where
 			name like concat( '%', #{name}, '%')
+			
+		]]>
+	</select>
+	
+	<select id="loginById" resultType="memberVO" parameterType="memberVO">
+		<![CDATA[
+			select * from t_member
+			where id = #{id} and pwd = #{pwd}
 			
 		]]>
 	</select>

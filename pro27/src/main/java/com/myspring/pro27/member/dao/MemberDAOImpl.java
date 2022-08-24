@@ -11,6 +11,7 @@ import com.myspring.pro27.member.vo.MemberVO;
 
 @Repository("memberDAO")
 public class MemberDAOImpl implements MemberDAO {
+	
 	@Autowired
 	private SqlSession sqlSession;
 
@@ -45,7 +46,18 @@ public class MemberDAOImpl implements MemberDAO {
 		int result = sqlSession.update("mapper.member.updateMember", memberVO);
 		return result;
 	}
-	
-	
+
+	@Override
+	public MemberVO loginById(MemberVO memberVO) throws DataAccessException {
+		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",memberVO);
+		return vo;
+	}
+//	@Override
+//	public List<MemberVO> searchMember(MemberVO memberVO) {
+//		List list = sqlSession.selectList("mapper.member.searchMember",memberVO);
+//		return list;
+//	}
+
+
 
 }

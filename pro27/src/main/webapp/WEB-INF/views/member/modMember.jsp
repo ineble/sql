@@ -13,7 +13,7 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 가입창</title>
+<title>지섭  - 회원 가입창</title>
 <style type="text/css">
 	.cls1{
 	font-size: 40px;
@@ -27,24 +27,24 @@ request.setCharacterEncoding("utf-8");
 </style>
 </head>
 <body>
-	<form action="${contextPath }/member/updateMember.do" method="post">
+	<form action="${contextPath }/member/updateMember.do" method="get">
 	<h1 align="center">회원 정보 수정창</h1>
 	<table align="center">
 	<tr  >
     	<td width="80"><p>아이디</p></td>
-    	<td width="50"><input type="text" name="id"  value="${member.id}" disabled="disabled" ></td>
+    	<td width="50"><input type="text" name="id"  value="${member.id}" readonly="readonly" ></td>
     </tr>
   	<tr >
     	<td width="80"><p>이름</p></td>
-    	<td width="50"><input type="text" name="name" ></td>
+    	<td width="50"><input type="text" name="name" value="${member.name}" ></td>
     </tr>	
     <tr >	
     	<td width="80"><p>비밀번호</p></td>
-    	<td width="50"><input type="password" name="pwd"></td>
+    	<td width="50"><input type="password" name="pwd" value="${member.pwd}"></td>
   	</tr>
   	<tr >	
     	<td width="80"><p>이메일</p></td>
-    	<td width="50"><input type="email" name="email"></td>
+    	<td width="50"><input type="email" name="email" value="${member.email}"></td>
   	</tr>
   	<tr>	
   		<td width="80"><p>&nbsp;</p></td>

@@ -3,6 +3,7 @@ package com.myspring.pro27.member.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,17 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.updateMember(memberVO);
 	}
 
-
+	@Override
+	public MemberVO login(MemberVO membervo) throws DataAccessException {
+		return memberDAO.loginById(membervo);
+	}
+	
+//	@Override
+//	public List<MemberVO> searchMember(MemberVO memberVO) throws DataAccessException {
+//		List memberList = null;
+//		memberList = memberDAO.searchMember(memberVO);
+//		return memberList;
+//	}
+	
 	
 }

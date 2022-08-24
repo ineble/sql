@@ -19,6 +19,11 @@ public interface MemberService {
 
 	public int updateMember(MemberVO memberVO) throws DataAccessException;
 
+	public MemberVO login(MemberVO membervo) throws Exception;
+
+
+	//public List<MemberVO> searchMember(MemberVO memberVO) throws DataAccessException;
+
 	
 
 }
