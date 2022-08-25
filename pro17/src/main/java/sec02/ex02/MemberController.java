@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/member/*") //1차 mapping
+//@WebServlet("/member/*") //1차 mapping
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     

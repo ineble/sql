@@ -19,13 +19,13 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
-	<bean id="memberController"
+<!-- 	<bean id="memberController"
 		class="com.spring.member.controller.MemberControllerImpl">
 		<property name="methodNameResolver">
 		<ref local="memberMethodResolver"/>
 		</property>
 		<property name="memberService" ref="memberService"/>
-	</bean>
+	</bean> -->
 	
 	<bean id="memberMethodResolver"
 			class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
@@ -41,12 +41,12 @@
 			</property>
 	</bean>
 	
-	<bean id="memberUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+<!-- 	<bean id="memberUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/member/*.do">memberController</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> -->
 	
 </beans>       		

@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.spring.member.service.MemberService;
 import com.spring.member.vo.MemberVO;
 
-@Controller("memberController")
+/*@Controller("memberController")*/
 public class MemberControllerImpl implements MemberController {
 	@Autowired
 	private MemberService memberService;

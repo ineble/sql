@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.board">
+	<resultMap id="articleResult" type="articleVO">
+		<result property="level" column="level" />
+		<result property="articleNO" column="articleNO" />
+		<result property="parentNO" column="parentNO" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="writeDate" column="writeDate" />
+		<result property="imageFileName" column="imageFileName" />
+		<result property="id" column="id" />
+	</resultMap>
+
+	<!-- <select id="selectAllArticlesList" resultMap="articleResult">
+      <![CDATA[
+         select * from t_board
+      ]]>
+	</select> -->
+	<select id="selectAllArticlesList" resultMap="articleResult">
+      <![CDATA[
+         SELECT tb.articleNo, tb.parentNo, fnc.level, tb.title, tb.content, tb.imageFileName, tb.writeDate, tb.id FROM (SELECT function_hierarchical()
+         AS articleNO, parentNO, @level AS LEVEL, title, content, imageFileName,writeDate, id FROM
+          (SELECT @start_with:=0, @articleNO:=@start_with, @level:=0) tbl JOIN t_board) fnc
+         left outer join t_board tb ON tb.articleNo = fnc.articleNo
+      ]]>
+	</select>
+	<!-- <select id="selectMemberById" resultType="articleVO"
+		parameterType="String">
+		<![CDATA[
+			select * from t_member 
+			where 
+			id = #{id}
+		]]>
+	</select>
+	<select id="selectMemberByPwd" resultMap="articleResult"
+		parameterType="int">
+		<![CDATA[
+			select * from t_member 
+			where 
+			pwd = #{pwd}
+		]]>
+	</select>
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+			insert into t_member(id,pwd,name,email)
+			values(#{id},#{pwd},#{name},#{email})
+		]]>
+	</insert>
+	<insert id="insertMember2" parameterType="java.util.Map">
+		<![CDATA[
+			insert into t_member(id,pwd,name,email)
+			values(#{id},#{pwd},#{name},#{email})
+		]]>
+	</insert>
+	<update id="updateMember" parameterType="memberVO">
+		<![CDATA[
+			update t_member
+			set pwd=#{pwd},name=#{name},email=#{email}
+			where
+			id=#{id}
+			
+		]]>
+	</update>
+
+	<delete id="deleteMember" parameterType="String">
+		<![CDATA[
+			delete from t_member
+			where
+			id=#{id}
+		]]>
+	</delete>
+	<select id="searchMember" resultMap="articleResult"
+		parameterType="memberVO">
+		<![CDATA[
+			select * from t_member
+		]]>
+
+		<where>
+			<if test="name != '' and name != null">
+				name=#{name}
+			</if>
+			<if test="email != '' and email != null">
+				and email=#{email}
+			</if>
+		</where>
+		order by joinDate desc
+	</select>
+	<select id="foreachSelect" resultMap="articleResult"
+		parameterType="java.util.Map">
+		<![CDATA[
+			select * from t_member
+		]]>
+		where name in
+		<foreach item="item" collection="list" open="(" separator=","
+			close=")">
+			#{item}
+		</foreach>
+		order by joinDate desc
+	</select>
+
+	<insert id="foreachInsert" parameterType="java.util.Map">
+		INSERT INTO t_member(id, pwd, name, email) VALUES
+		<foreach item="item" collection="list" separator=",">
+			(#{item.id},
+			#{item.pwd}, #{item.name}, #{item.email})
+		</foreach>
+	</insert>
+	<select id="selectLike" resultMap="articleResult"
+		parameterType="String">
+		<![CDATA[
+			select * from t_member
+			where
+			name like concat( '%', #{name}, '%')
+			
+		]]>
+	</select>
+
+	<select id="loginById" resultType="articleVO"
+		parameterType="memberVO">
+		<![CDATA[
+			select * from t_member
+			where id = #{id} and pwd = #{pwd}
+			
+		]]>
+	</select> -->
+</mapper>
+			        		
