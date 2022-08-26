@@ -27,104 +27,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
          left outer join t_board tb ON tb.articleNo = fnc.articleNo
       ]]>
 	</select>
-	<!-- <select id="selectMemberById" resultType="articleVO"
-		parameterType="String">
+	
+	<insert id="insertNewArticle" parameterType="java.util.Map">
 		<![CDATA[
-			select * from t_member 
-			where 
-			id = #{id}
-		]]>
-	</select>
-	<select id="selectMemberByPwd" resultMap="articleResult"
-		parameterType="int">
-		<![CDATA[
-			select * from t_member 
-			where 
-			pwd = #{pwd}
-		]]>
-	</select>
-	<insert id="insertMember" parameterType="memberVO">
-		<![CDATA[
-			insert into t_member(id,pwd,name,email)
-			values(#{id},#{pwd},#{name},#{email})
+			insert into t_board(articleNO, title, content, imageFileName, id)
+			values(#{articleNO},#{title},#{content},#{imageFileName},#{id})
 		]]>
 	</insert>
-	<insert id="insertMember2" parameterType="java.util.Map">
+	
+	<select id="selectNewArticleNO" resultType="int">
 		<![CDATA[
-			insert into t_member(id,pwd,name,email)
-			values(#{id},#{pwd},#{name},#{email})
+			SELECT max(articleNO)+1 from t_board
 		]]>
-	</insert>
-	<update id="updateMember" parameterType="memberVO">
+	</select>
+	<select id="selectArticle" resultMap="articleResult" parameterType="int">
 		<![CDATA[
-			update t_member
-			set pwd=#{pwd},name=#{name},email=#{email}
-			where
-			id=#{id}
-			
+			select * from t_board
+			where articleNO = #{articleNO}
+		]]>
+	</select>
+	
+	<update id="updateArticle" parameterType="java.util.Map">
+		<![CDATA[
+			update t_board
+			set title=#{title},
+			content=#{content}
+			<if test="imageFileName!='' and imageFileName!=null">
+			, imageFileName=#{imageFileName}
+			</if>
+			where articleNO = #{articleNO}
 		]]>
 	</update>
-
-	<delete id="deleteMember" parameterType="String">
+	
+	<delete id="deleteArticle" parameterType="int">
 		<![CDATA[
-			delete from t_member
-			where
-			id=#{id}
+			delete from t_board
+			where articleNO in (
+			select t.articleNO FROM t_board t
+				left outer join t_board t1 on t.parentNO = t1.articleNO
+				left outer join t_board t2 on t1.parentNO = t2.articleNO
+				left outer join t_board t3 on t2.parentNO = t3.articleNO
+				left outer join t_board t4 on t3.parentNO = t4.articleNO
+			)
 		]]>
 	</delete>
-	<select id="searchMember" resultMap="articleResult"
-		parameterType="memberVO">
-		<![CDATA[
-			select * from t_member
-		]]>
-
-		<where>
-			<if test="name != '' and name != null">
-				name=#{name}
-			</if>
-			<if test="email != '' and email != null">
-				and email=#{email}
-			</if>
-		</where>
-		order by joinDate desc
-	</select>
-	<select id="foreachSelect" resultMap="articleResult"
-		parameterType="java.util.Map">
-		<![CDATA[
-			select * from t_member
-		]]>
-		where name in
-		<foreach item="item" collection="list" open="(" separator=","
-			close=")">
-			#{item}
-		</foreach>
-		order by joinDate desc
-	</select>
-
-	<insert id="foreachInsert" parameterType="java.util.Map">
-		INSERT INTO t_member(id, pwd, name, email) VALUES
-		<foreach item="item" collection="list" separator=",">
-			(#{item.id},
-			#{item.pwd}, #{item.name}, #{item.email})
-		</foreach>
-	</insert>
-	<select id="selectLike" resultMap="articleResult"
-		parameterType="String">
-		<![CDATA[
-			select * from t_member
-			where
-			name like concat( '%', #{name}, '%')
-			
-		]]>
-	</select>
-
-	<select id="loginById" resultType="articleVO"
-		parameterType="memberVO">
-		<![CDATA[
-			select * from t_member
-			where id = #{id} and pwd = #{pwd}
-			
-		]]>
-	</select> -->
+	
+	
 </mapper>
 			        		

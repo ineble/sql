@@ -20,8 +20,8 @@ public class BoardServiceImpl implements BoardService{
 	private BoardDAO boardDAO;
 
 	@Override
-	public List listMembers() throws Exception {
-		List articleList = boardDAO.selectAllMemberList();
+	public List listArticles() throws Exception {
+		List articleList = boardDAO.selectAllArticleList();
 		return articleList;
 	}
 

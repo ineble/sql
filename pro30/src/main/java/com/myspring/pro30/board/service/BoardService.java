@@ -17,11 +17,10 @@ public interface BoardService {
 
 	public void removeArticle(int articleNO) throws Exception;
 
-	public List listMembers() throws Exception;
+	public List listArticles() throws Exception;
 
 
 
-	//public List<MemberVO> searchMember(MemberVO memberVO) throws DataAccessException;
 
 	
 

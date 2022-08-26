@@ -53,7 +53,8 @@ public class BoardControllerImpl implements BoardController {
 	@RequestMapping(value = "/board/listArticles.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView listArticles(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = (String) request.getAttribute("viewName");
-		List articleList = boardService.listMembers();
+		System.out.println(viewName);
+		List articleList = boardService.listArticles();
 		ModelAndView mav = new ModelAndView(viewName);
 		mav.addObject("articleList", articleList);
 		return mav;
@@ -207,6 +208,7 @@ public class BoardControllerImpl implements BoardController {
 	@RequestMapping(value = "/board/*Form.do", method = RequestMethod.GET)
 	private ModelAndView form(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = (String) request.getAttribute("viewName");
+		System.out.println(viewName);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName(viewName);
 		return mav;
@@ -214,18 +216,20 @@ public class BoardControllerImpl implements BoardController {
 
 	private String upload(MultipartHttpServletRequest multipartRequest) throws Exception {
 		String imageFileName = null;
+		Map<String,String> articleMap = new HashMap<String, String>();
 		Iterator<String> fileNames = multipartRequest.getFileNames();
 		while (fileNames.hasNext()) {
 			String fileName = fileNames.next();
 			MultipartFile mFile = multipartRequest.getFile(fileName);
 			imageFileName = mFile.getOriginalFilename();
-			File file = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + fileName);
+			File file = new File(ARTICLE_IMAGE_REPO + "\\" + fileName);
 			if (mFile.getSize() != 0) {
 				if (!file.exists()) {
 					file.getParentFile().mkdirs();
-					mFile.transferTo(new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName));
+					file.createNewFile();
 				}
 			}
+			mFile.transferTo(new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName));
 		}
 		return imageFileName;
 	}
