@@ -28,25 +28,23 @@ public class BoardDAOImpl implements BoardDAO {
 
 	private int selectNewArticleNO() {
 		return sqlSession.selectOne("mapper.board.selectNewArticleNO"); 
-		
 	}
 
 	@Override
 	public ArticleVO selectArticle(int articleNO) throws DataAccessException {
-		ArticleVO result = sqlSession.selectOne("mapper.board.selectMemberById", articleNO);
+		ArticleVO result = sqlSession.selectOne("mapper.board.selectArticle", articleNO);
 		return result;
 	}
 
 	@Override
 	public void updateArticle(Map articleMap) throws DataAccessException {
-		// TODO Auto-generated method stub
-		
+		sqlSession.update("mapper.board.updateArticle",articleMap);
 	}
 
+		
 	@Override
 	public void deleteArticle(int articleNO) throws DataAccessException {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete("mapper.board.deleteArticle",articleNO);
 	}
 
 	@Override

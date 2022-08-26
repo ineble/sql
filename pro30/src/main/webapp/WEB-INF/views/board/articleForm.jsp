@@ -39,7 +39,7 @@ request.setCharacterEncoding("UTF-8");
 		<table border="0" align="center">
 			<tr>
 				<td align="right">작성자:</td>
-				<td colspan="2"><input type="text" size="67" maxlength="100" value="${member.name}" readonly="readonly" /></td>
+				<td colspan="2"><input type="text" size="67" maxlength="100" value="${member.name}" disabled="disabled" /></td>
 			</tr>
 			<tr>
 				<td align="right">글제목:</td>

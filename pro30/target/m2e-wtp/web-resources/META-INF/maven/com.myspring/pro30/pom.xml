@@ -164,6 +164,12 @@
 			<artifactId>commons-io</artifactId>
 			<version>1.4</version>
 		</dependency>
+		<!-- 썸네일 이미지 -->
+		<dependency>
+			<groupId>net.coobird</groupId> 
+			<artifactId>thumbnailator</artifactId> 
+			<version>0.4.8</version> 
+		</dependency>
 
 
 	</dependencies>

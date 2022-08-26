@@ -33,6 +33,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/board/viewArticle.jsp" />
 	</definition>
 	
+	<definition name="/board/modMember" extends="baseLayout">
+		<put-attribute name="title" value="지섭 - 글 수정창" />
+		<put-attribute name="body" value="/WEB-INF/views/board/modMember.jsp" />
+	</definition>
+	
 	<!-- <definition name="/board/loginForm" extends="baseLayout">
 		<put-attribute name="title" value="로그인창" />
 		<put-attribute name="body" value="/WEB-INF/views/board/loginForm.jsp" />
@@ -40,10 +45,7 @@
 	
 	
 	
-	 <definition name="/board/modMember" extends="baseLayout">
-		<put-attribute name="title" value="회원정보조회" />
-		<put-attribute name="body" value="/WEB-INF/views/board/modMember.jsp" />
-	</definition> 
+	  
 	<definition name="/board/updateMember" extends="baseLayout">
 		<put-attribute name="title" value="회원정보조회" />
 		<put-attribute name="body" value="/WEB-INF/views/board/listMembers.jsp" />

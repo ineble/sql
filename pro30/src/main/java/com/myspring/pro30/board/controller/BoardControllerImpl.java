@@ -134,6 +134,10 @@ public class BoardControllerImpl implements BoardController {
 			articleMap.put(name, value);
 		}
 		String imageFileName = upload(multipartRequest);
+		HttpSession session = multipartRequest.getSession();
+		MemberVO memberVO = (MemberVO) session.getAttribute("member");
+		String id = memberVO.getId();
+		articleMap.put("id", id);
 		articleMap.put("imageFileName", imageFileName);
 		String articleNO = (String) articleMap.get("articleNO");
 		String message;
@@ -142,6 +146,8 @@ public class BoardControllerImpl implements BoardController {
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		try {
 			boardService.modArticle(articleMap);
+			System.out.println("img:" + imageFileName);
+			//여기 주의
 			if (imageFileName != null && imageFileName.length() != 0) {
 				File srcFile = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName);
 				File destDir = new File(ARTICLE_IMAGE_REPO + "\\" + articleNO);
@@ -152,8 +158,7 @@ public class BoardControllerImpl implements BoardController {
 			}
 			message = " <script>";
 			message += " alert('글을 수정했습니다');";
-			message += " location.href='" + multipartRequest.getContextPath() + "/board/viewArticle.do?articleNO="
-					+ articleNO + "';";
+			message += " location.href='" + multipartRequest.getContextPath() + "/board/viewArticle.do?articleNO=" + articleNO + "';";
 			message += " </script>";
 			resEnt = new ResponseEntity(message, responseHeaders, HttpStatus.CREATED);
 		} catch (Exception e) {
@@ -161,7 +166,7 @@ public class BoardControllerImpl implements BoardController {
 			srcFile.delete();
 			message = " <script>";
 			message += " alert('오류가 발생했습니다. 다시 시도해 주세요');";
-			message += " location.href='" + multipartRequest.getContextPath() + "/board/articleForm.do';";
+			message += " location.href='"+multipartRequest.getContextPath()+"/board/viewArticle.do?articleNO="+articleNO+"';";
 			message += " </script>";
 			resEnt = new ResponseEntity(message, responseHeaders, HttpStatus.CREATED);
 
@@ -172,7 +177,6 @@ public class BoardControllerImpl implements BoardController {
 	@Override
 	public ModelAndView viewArticleAndView(int articleNO, HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

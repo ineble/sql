@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <%
 request.setCharacterEncoding("UTF-8");
 %>
@@ -52,8 +53,7 @@ request.setCharacterEncoding("UTF-8");
 				</tr>
 			</c:when>
 			<c:when test="${!empty articleList}">
-				<c:forEach var="article" items="${articleList }"
-					varStatus="articleNum">
+				<c:forEach var="article" items="${articleList }" varStatus="articleNum">
 					<tr align="center">
 						<td width="5%">${articleNum.count}</td>
 						<td width="10%">${article.id }</td>

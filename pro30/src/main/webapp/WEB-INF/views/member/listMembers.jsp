@@ -7,6 +7,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("utf-8"); %>
+<script>
+	function fn_articleForm(isLogOn,articleForm,loginForm) {
+		if(isLogOn != '' && isLogOn != 'false'){
+			location.href=articleForm;
+		}else{
+			alert("로그인 후 글쓰기가 가능합니다.")
+			location.href=loginForm+'?action=/board/articleForm.do';
+		}
+		
+	}
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,9 +82,7 @@
 	</c:choose>
 	</table>
 	
-	<a href="${contextPath}/member/memberForm.do">
-	<h1 style="text-align: center">회원가입</h1>
-	</a>
+	<a class="cls1" href="javascript:fn_articleForm('${isLogOn}','${contextPath}/board/articleForm.do','${contextPath}/member/loginForm.do')"><p class="cls2">글쓰기</p></a>
 	
 
 </body>
