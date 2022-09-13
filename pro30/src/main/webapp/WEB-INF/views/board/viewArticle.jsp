@@ -103,7 +103,7 @@ request.setCharacterEncoding("utf-8");
 				<td><textarea rows="20" cols="60" name="content" id="i_content" disabled="disabled" >${article.content}</textarea></td>
 			</tr>
 
-			<%-- <c:if test="${not empty article.imageFileName && article.imageFileName != 'null'}">
+			 <c:if test="${not empty article.imageFileName && article.imageFileName != 'null'}">
 				<tr>
 					<td width="150" align="center" bgcolor="lightblue" rowspan="2">이미지</td>
 					<td>
@@ -116,7 +116,7 @@ request.setCharacterEncoding("utf-8");
 						<input type="file" name="imageFileName" id="i_imageFileName" disabled="disabled" onchange="readURL(this);" />
 					</td>
 				</tr>
-			</c:if> --%>
+			</c:if> 
 			<c:choose>
 				<c:when
 					test="${not empty article.imageFileName && article.imageFileName!= 'null'} }">

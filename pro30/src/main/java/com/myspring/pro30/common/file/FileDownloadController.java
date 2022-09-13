@@ -16,7 +16,7 @@ import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 public class FileDownloadController {
-   private static String ARTICLE_IMAGE_REPO ="c:\\board\\article_image";
+   private static String ARTICLE_IMAGE_REPO ="c:\\board\\article_imagefile";
    
    @RequestMapping("/download.do")
 
@@ -29,7 +29,7 @@ public class FileDownloadController {
       File image= new File(downFile);
       int lastIndex = imageFileName.lastIndexOf(".");
       String fileName= imageFileName.substring(0,lastIndex);
-      File thumbnail = new File(ARTICLE_IMAGE_REPO+"\\"+"thumbnail"+"\\"+fileName+".png");
+      File thumbnail = new File(ARTICLE_IMAGE_REPO+"\\"+ articleNO +"\\"+fileName+".png");
       if(image.exists()) {
          thumbnail.getParentFile().mkdirs();
          //폴더만들지 못해도  makedirectory해서 폴더생성

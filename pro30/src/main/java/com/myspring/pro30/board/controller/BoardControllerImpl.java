@@ -217,6 +217,14 @@ public class BoardControllerImpl implements BoardController {
 		mav.setViewName(viewName);
 		return mav;
 	}
+//	@RequestMapping(value = "/board/reply.do", method = RequestMethod.POST)
+//	private ModelAndView 
+//	action.equals("/replyForm.do")) {
+//         int parentNO=Integer.parseInt(request.getParameter("parentNO"));
+//         session=request.getSession();
+//         session.setAttribute("parentNO", parentNO);
+//         nextPage="/board06/replyForm.jsp";
+      
 
 	private String upload(MultipartHttpServletRequest multipartRequest) throws Exception {
 		String imageFileName = null;
