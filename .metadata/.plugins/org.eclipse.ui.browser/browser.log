@@ -411,3 +411,51 @@
 8월 29, 2022 09:31:36.212 [9040:4092:0829/093136.212:ERROR:device_event_log_impl.cc(214)] [09:31:36.212] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 8월 29, 2022 09:39:05.156 [7692:9760:0829/093905.156:ERROR:device_event_log_impl.cc(214)] [09:39:05.155] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 8월 29, 2022 09:39:59.154 [6624:2304:0829/093959.154:ERROR:device_event_log_impl.cc(214)] [09:39:59.154] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 14, 2022 12:23:45.862 NEW SESSION
+9월 14, 2022 12:23:45.862 [1356:6216:0914/122345.861:ERROR:device_event_log_impl.cc(214)] [12:23:45.861] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 14, 2022 12:35:31.57 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.58 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+9월 14, 2022 12:35:31.59 [1356:6216:0914/123531.057:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
+
+9월 14, 2022 15:02:19.491 NEW SESSION
+9월 14, 2022 15:02:19.491 [12908:5632:0914/150219.490:ERROR:device_event_log_impl.cc(214)] [15:02:19.490] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 14, 2022 15:03:28.737 [5060:8172:0914/150328.736:ERROR:device_event_log_impl.cc(214)] [15:03:28.737] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 14, 2022 15:04:24.712 [3824:12672:0914/150424.712:ERROR:device_event_log_impl.cc(214)] [15:04:24.712] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 15, 2022 18:13:23.591 NEW SESSION
+9월 15, 2022 18:13:23.592 [9652:1044:0915/181323.590:ERROR:device_event_log_impl.cc(214)] [18:13:23.590] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 16, 2022 16:07:53.148 NEW SESSION
+9월 16, 2022 16:07:53.148 [1104:8920:0916/160753.142:ERROR:device_event_log_impl.cc(214)] [16:07:53.142] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 16, 2022 16:09:02.511 [11648:10060:0916/160902.511:ERROR:device_event_log_impl.cc(214)] [16:09:02.511] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 17, 2022 12:35:51.872 NEW SESSION
+9월 17, 2022 12:35:51.872 [9144:12028:0917/123551.871:ERROR:device_event_log_impl.cc(214)] [12:35:51.871] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 19, 2022 14:46:11.723 NEW SESSION
+9월 19, 2022 14:46:11.723 [12988:13148:0919/144611.721:ERROR:device_event_log_impl.cc(214)] [14:46:11.722] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 19, 2022 15:21:43.958 [9748:3392:0919/152143.958:ERROR:device_event_log_impl.cc(214)] [15:21:43.957] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 20, 2022 09:39:04.351 NEW SESSION
+9월 20, 2022 09:39:04.351 [3472:13292:0920/093904.350:ERROR:device_event_log_impl.cc(214)] [09:39:04.350] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 20, 2022 14:16:01.194 NEW SESSION
+9월 20, 2022 14:16:01.194 [3472:12620:0920/141601.193:ERROR:device_event_log_impl.cc(214)] [14:16:01.193] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:19:39.348 [10908:8420:0920/141939.348:ERROR:device_event_log_impl.cc(214)] [14:19:39.348] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:21:19.787 [8820:7136:0920/142119.787:ERROR:device_event_log_impl.cc(214)] [14:21:19.788] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:30:22.796 [10208:2600:0920/143022.796:ERROR:device_event_log_impl.cc(214)] [14:30:22.796] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:39:08.248 [12596:6200:0920/143908.248:ERROR:device_event_log_impl.cc(214)] [14:39:08.248] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:48:12.212 [12540:3448:0920/144812.212:ERROR:device_event_log_impl.cc(214)] [14:48:12.212] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+9월 20, 2022 14:58:52.878 [3792:6928:0920/145852.878:ERROR:device_event_log_impl.cc(214)] [14:58:52.879] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 20, 2022 19:10:37.112 NEW SESSION
+9월 20, 2022 19:10:37.112 [15452:6140:0920/191037.111:ERROR:device_event_log_impl.cc(214)] [19:10:37.111] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+9월 21, 2022 09:49:17.830 NEW SESSION
+9월 21, 2022 09:49:17.830 [8948:14272:0921/094917.824:ERROR:device_event_log_impl.cc(214)] [09:49:17.823] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.

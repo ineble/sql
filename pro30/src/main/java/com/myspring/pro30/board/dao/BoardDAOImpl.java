@@ -28,6 +28,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	private int selectNewArticleNO() {
 		return sqlSession.selectOne("mapper.board.selectNewArticleNO"); 
+		
 	}
 
 	@Override

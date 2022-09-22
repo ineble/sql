@@ -48,6 +48,8 @@ public class BoardControllerImpl implements BoardController {
 		mav.setViewName(viewName);
 		return mav;
 	}
+	
+	
 
 	@Override
 	@RequestMapping(value = "/board/listArticles.do", method = { RequestMethod.GET, RequestMethod.POST })

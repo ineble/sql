@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component("articleVO")
 public class ArticleVO {
-	private int level;
+	private int level ;
 	private int articleNO;
 	private int parentNO;
 	private String title;

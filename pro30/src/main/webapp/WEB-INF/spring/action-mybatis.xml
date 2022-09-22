@@ -12,7 +12,7 @@
 			<value>/WEB-INF/config/jdbc/jdbc.properties</value>
 		</property>
 	</bean>
-
+	<!-- db연동정보 driver -> jdbc(mysql,mariadb) odbc(오라클) dbms-> -->
 	<bean id="dataSource"
 		class="org.apache.ibatis.datasource.pooled.PooledDataSource">
 		<property name="driver" value="${jdbc.driverClassName}" />
